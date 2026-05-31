@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Ganti font default menjadi MedievalSharp untuk SELURUH halaman */
+    font-family: 'MedievalSharp', cursive;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top-panel {
+    background-color: #2c2c2c;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #d4af37; /* Aksen Emas Medieval */
+}
+
+.top-panel h1 {
+    font-family: 'MedievalSharp', cursive; /* Menggunakan font ala kerajaan kuno */
+    color: #d4af37; /* Emas medieval */
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    font-size: 36px;
+    /* Memberikan efek bayangan gelap sekaligus pendaran cahaya emas tipis */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 15px rgba(212, 175, 55, 0.4); 
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.controls button:hover {
+    background-color: #555;
+}
+
+.controls .btn-primary {
+    background-color: #8b0000; /* Merah Crimson */
+    border-color: #ff4c4c;
+}
+
+.controls .btn-primary:hover {
+    background-color: #a50000;
+}
+
+.arena {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.track {
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.track h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #aaa;
+}
+
+canvas {
+    background-color: #000;
+    border: 2px solid #444;
+    border-radius: 4px;
+}
+
+.scoreboard {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #111;
+    border: 1px solid #333;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.scoreboard p {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scoreboard span {
+    font-family: monospace;
+    color: #d4af37;
+}
+
+/* =========================================
+   PANEL LEGENDA (AWUU EFFECT)
+   ========================================= */
+.legend-panel {
+    background: linear-gradient(145deg, #1c1c1c, #111);
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.15); /* Pendaran emas halus */
+}
+
+.legend-panel h3 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.legend-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #ccc;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    transition: transform 0.2s;
+}
+
+.legend-item:hover {
+    transform: translateY(-2px); /* Efek mengambang kalau disentuh mouse */
+    border-color: #555;
+}
+
+/* Kotak Warna di Legenda */
+.color-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+}
+
+.grass { background-color: #2d4c1e; }
+.wall { background-color: #5a5a5a; }
+.lava { background: radial-gradient(circle, #ffcc00, #a32020); }
+.start { background-color: #4287f5; }
+.finish { background-color: #d4af37; color: #000; }
+
+/* Garis Warna di Legenda */
+.line-box {
+    display: inline-block;
+    width: 28px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* Pendaran (Glow) pada indikator garis */
+.greedy-line { background-color: #00ffff; box-shadow: 0 0 6px #00ffff;}
+.backtrack-line { background-color: #ff4c4c; box-shadow: 0 0 6px #ff4c4c;}
+.bnb-line { background-color: #d4af37; box-shadow: 0 0 6px #d4af37;}
