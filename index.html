@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval PAA: Algorithm Olympics</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-panel">
+        <h1>⚔️ The Medieval Maze: Pathfinding Algorithms 🛡️</h1>
+        
+        <div class="controls">
+            <button id="btn-acak">Acak Rintangan</button>
+            <button id="btn-mulai" class="btn-primary">Mulai Simulasi</button>
+        </div>
+    </header>
+
+    <main class="arena">
+        <section class="track">
+            <h2>1. Greedy (Nearest Neighbor)</h2>
+            <canvas id="canvas-greedy" width="400" height="400"></canvas>
+            <div class="scoreboard" id="score-greedy">
+                <p>Status: <span class="val-status">Siaga</span></p>
+                <p>Waktu Eksekusi: <span class="val-time">0 ms</span></p>
+                <p>Nodes Dieksplorasi: <span class="val-nodes">0 petak</span></p>
+            </div>
+        </section>
+
+        <section class="track">
+            <h2>2. Backtracking (O(N!))</h2>
+            <canvas id="canvas-backtrack" width="400" height="400"></canvas>
+            <div class="scoreboard" id="score-backtrack">
+                <p>Status: <span class="val-status">Menunggu Algoritma...</span></p>
+                <p>Waktu Eksekusi: <span class="val-time">-</span></p>
+                <p>Nodes Dieksplorasi: <span class="val-nodes">-</span></p>
+            </div>
+        </section>
+
+        <section class="track">
+            <h2>3. Branch & Bound</h2>
+            <canvas id="canvas-bnb" width="400" height="400"></canvas>
+            <div class="scoreboard" id="score-bnb">
+                <p>Status: <span class="val-status">Menunggu Algoritma...</span></p>
+                <p>Waktu Eksekusi: <span class="val-time">-</span></p>
+                <p>Nodes Dieksplorasi: <span class="val-nodes">-</span></p>
+            </div>
+        </section>
+    </main>
+
+    <section class="legend-panel">
+        <h3>📜 Petunjuk Peta & Jalur</h3>
+        <div class="legend-grid">
+            <div class="legend-item"><span class="color-box grass"></span> Hutan/Jalur Aman</div>
+            <div class="legend-item"><span class="color-box wall"></span> Tembok Kastil</div>
+            <div class="legend-item"><span class="color-box lava" style="background: radial-gradient(circle, #ffcc00, #a32020);"></span> Lava Panas</div>
+            <div class="legend-item"><span class="color-box" style="background: #3a1818; border-color: #111;">🐉</span> Sarang Naga</div>
+
+            <div class="legend-item"><span class="color-box start">S</span> Titik Start</div>
+            <div class="legend-item"><span class="color-box finish">F</span> Harta Karun</div>
+            
+            <div class="legend-item"><span class="line-box greedy-line"></span> Rute Greedy</div>
+            <div class="legend-item"><span class="line-box backtrack-line"></span> Rute Backtrack</div>
+            <div class="legend-item"><span class="line-box bnb-line"></span> Rute BnB</div>
+        </div>
+    </section>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
