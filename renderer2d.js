@@ -72,22 +72,20 @@ export function drawGrid(canvas, ctx, grid) {
             if (r === START_NODE.row && c === START_NODE.col) {
                 ctx.fillStyle = '#4287f5';
                 ctx.fillRect(x, y, cellSize, cellSize);
-                ctx.fillStyle = '#ffffff';
-                const fontSize = Math.floor(cellSize * 0.6);
-                ctx.font = fontSize + "px 'MedievalSharp', cursive";
+                const fontSize = Math.floor(cellSize * 0.9);
+                ctx.font = fontSize + "px Arial, sans-serif"; // Menggunakan Arial agar emoji stabil
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText('S', x + cellSize / 2, y + cellSize / 2);
+                ctx.fillText('🐎', x + cellSize / 2, y + cellSize / 2); // Kuda
             }
             if (r === FINISH_NODE.row && c === FINISH_NODE.col) {
                 ctx.fillStyle = '#d4af37';
                 ctx.fillRect(x, y, cellSize, cellSize);
-                ctx.fillStyle = '#ffffff'; 
-                const fontSize = Math.floor(cellSize * 0.6);
-                ctx.font = fontSize + "px 'MedievalSharp', cursive";
+                const fontSize = Math.floor(cellSize * 0.9);
+                ctx.font = fontSize + "px Arial, sans-serif"; // Menggunakan Arial agar emoji stabil
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText('F', x + cellSize / 2, y + cellSize / 2);
+                ctx.fillText('💎', x + cellSize / 2, y + cellSize / 2); // Surat/Gulungan
             }
 
             // Garis pembatas (Grid)
